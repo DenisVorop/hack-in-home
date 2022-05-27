@@ -1,0 +1,82 @@
+.department {
+
+    // .department__container
+
+    &__container {}
+
+    // .department__body
+
+    &__body {
+        padding: 32px;
+    }
+
+    // .department__title
+
+    &__title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        color: #080D1D;
+        margin: 0px 0px 4px 0px;
+    }
+
+    &__institute {
+        font-size: 16px;
+        color: #080D1D;
+        margin: 0px 0px 16px 0px;
+    }
+
+    // .department__location
+
+    &__location {
+        background: #274093;
+        box-shadow: 0px 0px 8px rgba(12, 27, 74, 0.08);
+        border-radius: 4px;
+        padding: 7px 16px;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: fit-content;
+        margin: 0px 0px 24px 0px;
+    }
+
+    // .department__info
+
+    &__info {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+        margin: 0px 0px 40px 0px;
+    }
+
+    // .department__working
+
+    &__working {}
+
+    // .department__label
+
+    &__label {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        color: #080D1D;
+        margin: 0px 0px 24px 0px;
+    }
+
+    // .department__teachers
+
+    &__teachers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    // .department__teacher
+
+    &__teacher {}
+}

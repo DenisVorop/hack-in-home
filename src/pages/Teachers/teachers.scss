@@ -1,0 +1,23 @@
+.teachers {
+
+    // .teachers__container
+
+    &__container {}
+
+    // .teachers__body
+
+    &__body {
+        height: calc(100vh - 87px);
+        overflow: auto;
+    }
+
+    // .teachers__cards
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        padding: 32px;
+    }
+
+}

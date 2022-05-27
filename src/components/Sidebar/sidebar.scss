@@ -1,0 +1,32 @@
+.sidebar {
+    background: #F4F5FA;
+    padding: 32px 0px 0px 0px;
+    min-height: calc(100vh - 87px);
+
+    // .sidebar__container
+
+    &__container {}
+
+    // .sidebar__links
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    // .sidebar__link
+
+    &__link {
+        padding: 9px 24px;
+    }
+
+    &__link-active {
+        background: #FFFFFF;
+        border-left: 3px solid #274093;
+        border-radius: 0px 4px 5px 0px;
+    }
+}

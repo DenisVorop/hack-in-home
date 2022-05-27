@@ -1,0 +1,59 @@
+.institutes {
+
+    // .institutes__container
+
+    &__container {
+        padding: 32px;
+    }
+
+    // .institutes__body
+
+    &__body {}
+
+    // .institutes__cards
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 24px;
+        // display: flex;
+        // flex-wrap: wrap;
+    }
+
+    // .institutes__card
+
+    &__card {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 24px rgba(39, 64, 147, 0.1);
+        border-radius: 4px;
+        padding: 24px 40px;
+        height: fit-content;
+        border: 1px solid #D4D9E9;
+    }
+
+    // .institutes__institute
+
+    &__institute {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        margin: 0px 0px 16px 0px;
+    }
+
+    // .institutes__departments
+
+    &__departments {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #1F3376;
+    }
+
+    // .institutes__department
+
+    &__department {
+        &:not(:last-child) {
+            margin: 0px 0px 12px 0px;
+        }
+    }
+}
