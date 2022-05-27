@@ -1,25 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import Frame from './components/_Frame/Frame';
+import Account from './pages/Account/Account';
+import Chat from './pages/Chat/Chat';
+import Department from './pages/Department/Department';
+import Institutes from './pages/Institutes/Institutes';
+import Login from './pages/Login/Login';
+import Teachers from './pages/Teachers/Teachers';
+import { useAppDispatch } from './store/hooks/redux';
+import { checkLogin } from './store/reducers/ActionCreators'
 
-function App() {
+const App = () => {
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+
+  React.useEffect(() => {
+    const localStorageToken = localStorage.getItem('token')
+    const localStorageUser = localStorage.getItem('user')
+    if (localStorageToken || localStorageUser)
+      return dispatch(checkLogin())
+    if (!localStorageToken || !localStorageUser)
+      return navigate('/login')
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="wrapper">
+      <main>
+        <div className="app">
+          <div className="app__container">
+            <Routes>
+              <Route path='/login' element={<Login />} />
+              <Route path='/' element={<Frame />} >
+                <Route index element={<Chat />} />
+                <Route path='/teachers' element={<Teachers />} />
+                <Route path='/institutes' element={<Institutes />} />
+                <Route path='/institutes/:department' element={<Department />} />
+                <Route path='/account' element={<Account />} />
+              </Route>
+            </Routes>
+          </div>
+        </div>
+      </main >
+    </div >
   );
 }
 
