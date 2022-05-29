@@ -1,11 +1,12 @@
 import { TDepartment } from "../../types/types"
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react"
+import { REACT_APP_API_URL } from "../../api/loginApi"
 
-const baseUrl = ''
+// const baseUrl = ''
 
 export const departmentAPI = createApi({
     reducerPath: 'departmentApi',
-    baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
+    baseQuery: fetchBaseQuery({ baseUrl: REACT_APP_API_URL }),
     tagTypes: ['Department'],
     endpoints: (build) => ({
         createDepartment: build.mutation<TDepartment, TDepartment>({
