@@ -10,6 +10,8 @@ import chatLogo from '../../assets/images/logo.svg'
 import info from '../../assets/images/help.svg'
 import send from '../../assets/images/send.svg'
 
+import rasp from '../../assets/files/rasp.pdf'
+
 import './chat.scss'
 import axios from 'axios'
 import Popup from '../../components/Popups/Popup'
@@ -19,12 +21,9 @@ interface ChatProps { }
 const Chat: React.FC<ChatProps> = () => {
     const { value, reset, bind } = useInput('')
     const [messages, setMessages] = React.useState([
-        { user: 'bot', text: 'Hello! Finally found the time to write to you I need your help in creating interactive animations for my mobile application.' },
-        { user: 'bot', text: 'for my mobile application.' },
-        { user: 'user', text: 'Hello! Finally found the time to write to you for my mobile application.' },
-        { user: 'bot', text: 'Hello! Finally application.' },
-        { user: 'user', text: 'Hello! Finally found the time  in creating interactive animations for my mobile application.' },
-        { user: 'user', text: 'Hello!' },
+        { user: 'bot', text: 'Привет! Я твой личный онлайн помощник. Постараюсь помочь тебе, если у тебя возникут вопросы, так что смело задавай их!' },
+        { user: 'bot', text: 'Если я не найду решение, на платформе есть множество ответов на различные вопросы. Ознакомься, пожалуйста.' },
+        { user: 'bot', text: 'Список моих команд ты можешь получить, написав мне /info' },
     ] as TMessage[])
     const isEnterPressed = useKeyPress('Enter')
 
@@ -63,11 +62,11 @@ const Chat: React.FC<ChatProps> = () => {
         if (value === '/info') {
             setMessages(prev => [...prev, {
                 user: 'user',
-                text: 'Дай информацию какую-либо'
+                text: 'Какие команды можно задать?'
             }])
             return setTimeout(() => setMessages(prev => [...prev, {
                 user: 'bot',
-                text: 'вот тебе вся инфа, брат'
+                text: 'Пока что я работаю в тестовом режиме и мой функционал сильно ограничен, но ты можешь спросить у меня про кафедры (/departments), как пройти до кабинета (/cabinet), найти конкретную кафедру (начни вбивать название) или преподаваталя (начни вводить ФИО). Не переживай, если я на что-то не смогу ответить, полагаю, ответ на твой вопрос будет присутствовать на платформе. '
             }]), 1000)
         }
         if (value === '/cabinet') {
@@ -167,8 +166,8 @@ const Chat: React.FC<ChatProps> = () => {
             }])
             return setTimeout(() => setMessages(prev => [...prev, {
                 user: 'bot',
-                text: 'вот тебе расписание, брат',
-                file: '../../src/files/resume.pdf'
+                text: 'Держи расписание на семестр! Может еще есть вопросы?',
+                file: rasp
             }]), 1000)
         }
         if (value === '/rating') {

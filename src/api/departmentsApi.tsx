@@ -4,9 +4,9 @@ import axios from 'axios'
 import { TDepartmentsDataResponse } from '../types/response.types'
 
 
-// const REACT_APP_API_URL = 'http://localhost:8000'
+const REACT_APP_API_URL = 'http://localhost:8000'
 // const REACT_APP_API_URL = 'https://hack-in-home.herokuapp.com'
-const REACT_APP_API_URL = ''
+// const REACT_APP_API_URL = ''
 
 
 const $local = axios.create({
