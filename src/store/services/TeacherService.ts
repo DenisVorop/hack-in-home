@@ -1,12 +1,12 @@
 import { TTeacher } from '../../types/types';
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react"
-import { REACT_APP_API_URL } from '../../api/loginApi';
 
-// const baseUrl = ''
+// const baseUrl = 'http://localhost:8000'
+const baseUrl = 'https://hack-in-home.herokuapp.com'
 
 export const teacherAPI = createApi({
     reducerPath: 'teacherApi',
-    baseQuery: fetchBaseQuery({ baseUrl: REACT_APP_API_URL }),
+    baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
     tagTypes: ['Teacher'],
     endpoints: (build) => ({
         createTeacher: build.mutation<TTeacher, TTeacher>({
