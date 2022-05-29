@@ -1,7 +1,7 @@
 import { TDepartment } from "../../types/types"
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react"
 
-const baseUrl = 'http://localhost:8000'
+const baseUrl = ''
 
 export const departmentAPI = createApi({
     reducerPath: 'departmentApi',

@@ -33,7 +33,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-server": "json-server --watch public/db.json --port=8000 -m ./node_modules/json-server-auth"
+    "json-server": "json-server --watch public/db.json --port=8000 -m ./node_modules/json-server-auth",
+    "server": "node server.js"
   },
   "eslintConfig": {
     "extends": [
