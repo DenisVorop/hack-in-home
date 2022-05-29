@@ -28,7 +28,7 @@ export type TTeacher = {
     subjects: string
     department: string
     Img: string
-    id?: number
+    id: number
 }
 
 export type TDepartment = {

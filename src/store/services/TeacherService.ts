@@ -18,11 +18,13 @@ export const teacherAPI = createApi({
             invalidatesTags: ['Teacher']
         }),
         updateTeacher: build.mutation<TTeacher, TTeacher>({
-            query: (teacher: TTeacher) => ({
+            query: (teacher: TTeacher) => {
+                debugger
+                return ({
                 url: `/api_teachers/${teacher.id}`,
                 method: 'PUT',
                 body: teacher,
-            }),
+            })},
             invalidatesTags: ['Teacher']
         }),
         deleteTeacher: build.mutation<TTeacher, TTeacher>({

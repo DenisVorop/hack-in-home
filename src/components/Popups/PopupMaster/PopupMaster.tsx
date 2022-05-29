@@ -6,13 +6,12 @@ import Popup from '../Popup';
 
 interface PopupMasterProps {
     teacher: TTeacher
-    setTeacher: (teacher: TTeacher) => void
-    handleUpdateTeacher: () => void
+    handleUpdateTeacher: (teacher: TTeacher) => void
     popupVisible: boolean
     setPopupVisible: (visible: boolean) => void
 }
 
-const PopupMaster: React.FC<PopupMasterProps> = ({ teacher, setTeacher, handleUpdateTeacher, popupVisible, setPopupVisible }) => {
+const PopupMaster: React.FC<PopupMasterProps> = ({ teacher, handleUpdateTeacher, popupVisible, setPopupVisible }) => {
     const { value: valueName, reset: resetName, bind: bindName } = useInput(teacher.name)
     const { value: valueDegree, reset: resetDegree, bind: bindDegree } = useInput(teacher.degree)
     const { value: valuePhone, reset: resetPhone, bind: bindPhone } = useInput(teacher.phone)
@@ -21,8 +20,7 @@ const PopupMaster: React.FC<PopupMasterProps> = ({ teacher, setTeacher, handleUp
     const { value: valueDepartment, reset: resetDepartment, bind: bindDepartment } = useInput(teacher.department)
 
     const saveChanges = () => {
-        handleUpdateTeacher()
-        setTeacher({
+        handleUpdateTeacher({
             name: valueName,
             degree: valueDegree,
             phone: valuePhone,

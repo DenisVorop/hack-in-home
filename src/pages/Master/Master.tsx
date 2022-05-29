@@ -21,11 +21,9 @@ const Master: React.FC = () => {
 
     const [deleteTeacher, { }] = teacherAPI.useDeleteTeacherMutation()
     const [updateTeacher, { }] = teacherAPI.useUpdateTeacherMutation()
-    const [teacher, setTeacher] = React.useState<TTeacher>({} as TTeacher)
 
     const [deleteDepartment, { }] = departmentAPI.useDeleteDepartmentMutation()
     const [updateDepartment, { }] = departmentAPI.useUpdateDepartmentMutation()
-    const [department, setDepartment] = React.useState<TDepartment>({} as TDepartment)
 
     const [selectedTeacher, setSelectedTeacher] = React.useState<TTeacher[]>([] as TTeacher[])
     const { value: searchTeacherValue, reset: resetSearchTeacherValue, bind: bindSearchTeacherValue } = useInput('')
@@ -56,14 +54,15 @@ const Master: React.FC = () => {
     const handleRemoveTeacher = (teacher: TTeacher) => {
         deleteTeacher(teacher)
     }
-    const handleUpdateTeacher = () => {
+    const handleUpdateTeacher = (teacher: TTeacher) => {
         updateTeacher(teacher)
     }
 
     const handleRemoveDepartment = (department: TDepartment) => {
         deleteDepartment(department)
     }
-    const handleUpdateDepartment = () => {
+
+    const handleUpdateDepartment = (department: TDepartment) => {
         updateDepartment(department)
     }
 
@@ -92,7 +91,6 @@ const Master: React.FC = () => {
                             return (
                                 <PopupMaster
                                     teacher={teacher}
-                                    setTeacher={setTeacher}
                                     handleUpdateTeacher={handleUpdateTeacher}
                                     key={teacher.id}
                                     popupVisible={popupVisibleTeacher}
@@ -121,7 +119,6 @@ const Master: React.FC = () => {
                             return (
                                 <PopupDepartment
                                     department={department}
-                                    setDepartment={setDepartment}
                                     key={department.id}
                                     handleUpdateDepartment={handleUpdateDepartment}
                                     popupVisible={popupVisibleDepartment}

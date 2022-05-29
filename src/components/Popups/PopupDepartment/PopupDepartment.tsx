@@ -5,20 +5,18 @@ import Popup from '../Popup';
 
 interface PopupDepartmentProps {
     department: TDepartment
-    setDepartment: (department: TDepartment) => void
-    handleUpdateDepartment: () => void
+    handleUpdateDepartment: (department: TDepartment) => void
     popupVisible: boolean
     setPopupVisible: (visible: boolean) => void
 }
 
-const PopupDepartment: React.FC<PopupDepartmentProps> = ({ department, setDepartment, handleUpdateDepartment, popupVisible, setPopupVisible }) => {
+const PopupDepartment: React.FC<PopupDepartmentProps> = ({ department, handleUpdateDepartment, popupVisible, setPopupVisible }) => {
     const { value: valueDepartment, reset: resetDepartment, bind: bindDepartment } = useInput(department.department)
     const { value: valueInstitute, reset: resetInstitute, bind: bindInstitutee } = useInput(department.institute)
     const { value: valueInfo, reset: resetInfo, bind: bindInfo } = useInput(department.info)
 
     const saveChanges = () => {
-        handleUpdateDepartment()
-        setDepartment({
+        handleUpdateDepartment({
             department: valueDepartment,
             institute: valueInstitute,
             info: valueInfo,
