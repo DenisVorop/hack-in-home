@@ -1,7 +1,8 @@
 import { TDepartment } from "../../types/types"
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react"
 
-const baseUrl = 'http://localhost:8000'
+const baseUrl = ''
+// const baseUrl = 'http://localhost:8000'
 // const baseUrl = 'https://hack-in-home.herokuapp.com'
 
 export const departmentAPI = createApi({
