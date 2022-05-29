@@ -12,6 +12,7 @@ import send from '../../assets/images/send.svg'
 
 import './chat.scss'
 import axios from 'axios'
+import Popup from '../../components/Popups/Popup'
 
 interface ChatProps { }
 
@@ -45,6 +46,14 @@ const Chat: React.FC<ChatProps> = () => {
         return await axios.get(`http://localhost:8000/api_departments?department_like=${value}`)
     }
 
+    const [popupVisible, setPopupVisible] = React.useState<boolean>(false)
+
+    // новый корпус - 0407
+    // 0811 - столовая
+    // 0205 - деканат
+    // 239 - 342
+    // старый корпус - 357а
+
     const addMessage = async () => {
         const teacher: TTeacher[] = await fetchTeacher(value)
             .then(res => res.data)
@@ -59,6 +68,76 @@ const Chat: React.FC<ChatProps> = () => {
             return setTimeout(() => setMessages(prev => [...prev, {
                 user: 'bot',
                 text: 'вот тебе вся инфа, брат'
+            }]), 1000)
+        }
+        if (value === '/cabinet') {
+            setMessages(prev => [...prev, {
+                user: 'user',
+                text: 'Помоги добраться до кабинета'
+            }])
+            return setTimeout(() => setMessages(prev => [...prev, {
+                user: 'bot',
+                text: 'Окей, напиши ближайший кабинет или у входа в какой корпус ты стоишь'
+            }]), 1000)
+        }
+        if (value === 'новый корпус' || value === 'Новый корпус' || value === '0811' || value === '0205' || value === '239' || value === 'старый корпус' || value === 'Старый корпус') {
+            setMessages(prev => [...prev, {
+                user: 'user',
+                text: value
+            }])
+            return setTimeout(() => setMessages(prev => [...prev, {
+                user: 'bot',
+                text: 'Какой кабинет ищете? Или может ближайшую столовую? Или деканат?'
+            }]), 1000)
+        }
+        if (value === 'кафедра прикладной математики' || value === '357а') {
+            setMessages(prev => [...prev, {
+                user: 'user',
+                text: `${value}`
+            }])
+            return setTimeout(() => setMessages(prev => [...prev, {
+                user: 'bot',
+                text: 'Проходя турникет, поворачиваем направо, поднимаемся по лестнице на  3 этаж.  Перед вами будет отдел кафедры прикладной математики . Кабинеты 357-а-з.'
+            }]), 1000)
+        }
+        if (value === '0407') {
+            setMessages(prev => [...prev, {
+                user: 'user',
+                text: `${value}`
+            }])
+            return setTimeout(() => setMessages(prev => [...prev, {
+                user: 'bot',
+                text: 'Проходим через турникет. Идём направо до лифта. Поднимаемся на 4 этаж. Если лифт, на котором вы сели на 1 этаже, находился с правой стороны от Вас, то поворачиваем направо. Если с левой, то налево. Первая аудитория справа это и будет кабинет 0407.'
+            }]), 1000)
+        }
+        if (value === 'столовая' || value === 'Столовая' || value === 'Столовую' || value === 'столовую') {
+            setMessages(prev => [...prev, {
+                user: 'user',
+                text: `${value}`
+            }])
+            return setTimeout(() => setMessages(prev => [...prev, {
+                user: 'bot',
+                text: 'Из аудитории 0811 поворачиваем налево. Доходим до лифта. Спускаемся до 3 этажа. Если лифт, на котором вы сели на 8 этаже, находился с правой стороны от Вас, то поворачиваем налево. Если с левой, то направо. И слева находится кафе-бургерная.'
+            }]), 1000)
+        }
+        if (value === 'деканат' || value === 'Деканат' || value === '233') {
+            setMessages(prev => [...prev, {
+                user: 'user',
+                text: `${value}`
+            }])
+            return setTimeout(() => setMessages(prev => [...prev, {
+                user: 'bot',
+                text: 'При выходе из кабинета поворачиваем направо. Идём до перехода в главный корпус, который находится с левой стороны. Идём прямо по  желтым указателям. Пришли в учебный корпус. Проходим прямо по коридору до лестницы, находящейся справой стороны от Вас. Поднимаемся на этаж выше( 2 этаж). И с левой стороны находится единый деканат.'
+            }]), 1000)
+        }
+        if (value === '342') {
+            setMessages(prev => [...prev, {
+                user: 'user',
+                text: `${value}`
+            }])
+            return setTimeout(() => setMessages(prev => [...prev, {
+                user: 'bot',
+                text: 'Из аудитории поворачиваем налево. Идём прямо по длинному коридору. Дойдя до упора в стену, поворачиваем налево. Проходим прямо до лестницы, находящейся с левой стороны. Поднимаемся на этаж. Оказываемся на 3 этаже. Прямо будет находится нужная аудитория.'
             }]), 1000)
         }
         if (value === '/departments') {
@@ -135,20 +214,14 @@ const Chat: React.FC<ChatProps> = () => {
         { hint: '/info', label: 'Получить информацию о платформе' },
         { hint: '/departments', label: 'Получить список кафедр' },
         { hint: '/timetable', label: 'Получить расписание' },
-        { hint: '/rating', label: 'Получить рейтинг' }
+        { hint: '/rating', label: 'Получить рейтинг' },
+        { hint: '/cabinet', label: 'Найти кабинет' },
     ], [])
 
     return (
         <div className="chat">
             <div className="chat__container">
                 <div className="chat__about about-chat">
-                    <div className="about-chat__description">
-                        About app Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Nunc vulputate libero et velit interdum,
-                        ac aliquet odio mattis. Class aptent taciti sociosqu ad litora
-                        torquent per conubia nostra, per inceptos himenaeos. Curabitur
-                        tempus urna at turpis condimentum lobortis.
-                    </div>
                     <div className="about-chat__bot">
                         Виртуальный помощник - удобный и понятный интерфейс. Применение бота обеспечивает
                         пользователя неограниченными ресурсами в использовании сайта. Из функций можно отметить:
@@ -167,7 +240,7 @@ const Chat: React.FC<ChatProps> = () => {
                                 <div className="header-chat__online">online</div>
                             </div>
                         </div>
-                        <div className="header-chat__right">
+                        <div className="header-chat__right" onClick={() => setPopupVisible(true)}>
                             <img src={info} alt="help" />
                         </div>
                     </div>
@@ -231,6 +304,19 @@ const Chat: React.FC<ChatProps> = () => {
                     </div>
                 </div>
             </div>
+            <Popup
+                popupVisible={popupVisible}
+                setPopupVisible={setPopupVisible}
+            >
+                <div className="chat__about about-chat">
+                    <div className="about-chat__bot">
+                        Виртуальный помощник - удобный и понятный интерфейс. Применение бота обеспечивает
+                        пользователя неограниченными ресурсами в использовании сайта. Из функций можно отметить:
+                        поиск данных о кафедрах и о преподавателей; встроенный модульный журнал; возможность
+                        просмотра расписания групп.
+                    </div>
+                </div>
+            </Popup>
         </div>
     )
 }

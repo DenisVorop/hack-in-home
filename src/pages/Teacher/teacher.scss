@@ -1,0 +1,225 @@
+.teacher {
+
+    // .teacher__container
+
+    &__container {
+        padding: 32px;
+    }
+
+    // .teacher__title
+
+    &__title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        color: #080D1D;
+        margin: 0px 0px 40px 0px;
+    }
+
+    // .teacher__body
+
+    &__body {}
+
+    // .teacher__info
+
+    &__info {
+        margin: 0px 0px 32px 0px;
+        display: flex;
+    }
+
+    // .teacher__photo
+
+    &__photo {
+        margin: 0px 24px 0px 0px;
+        width: 227px;
+        height: 227px;
+        background: #F4F5FA;
+        border: 1px solid #A9B3D4;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 224px;
+            height: 224px;
+        }
+    }
+
+    // .teacher__info-right
+
+    &__info-right {}
+
+    // .teacher__department
+
+    &__department {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        color: #080D1D;
+        margin: 0px 0px 24px 0px;
+    }
+
+    // .teacher__micro-info
+
+    &__micro-info {}
+
+    // .teacher__degree-rank
+
+    &__degree-rank {
+        margin: 0px 0px 24px 0px;
+    }
+
+    // .teacher__degree
+
+    &__degree {
+        margin: 0px 0px 8px 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    // .teacher__rank
+
+    &__rank {
+        display: flex;
+        align-items: center;
+    }
+
+    // .teacher__working
+
+    &__working {}
+
+    // .teacher__common
+
+    &__common {
+        margin: 0px 0px 8px 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    // .teacher__spec
+
+    &__spec {
+        display: flex;
+        align-items: center;
+    }
+
+    // .teacher__common-info
+
+    &__common-info {}
+
+    // .teacher__activity
+
+    &__activity {}
+}
+
+.degree {
+
+    // .degree__label
+
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+        margin: 0px 12px 0px 0px;
+    }
+
+    // .degree__name
+
+    &__name {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+    }
+}
+
+.rank {
+
+    // .rank__label
+
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+        margin: 0px 12px 0px 0px;
+    }
+
+    // .rank__name
+
+    &__name {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+    }
+}
+
+.common {
+
+    // .common__label
+
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+        margin: 0px 12px 0px 0px;
+    }
+
+    // .common__name
+
+    &__name {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+    }
+}
+
+.spec {
+
+    // .spec__label
+
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+        margin: 0px 12px 0px 0px;
+    }
+
+    // .spec__name
+
+    &__name {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+    }
+}
+
+.info-common-teacher {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin: 0px 0px 32px 0px;
+}
+
+.activity-teacher-label {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin: 0px 0px 16px 0px;
+}
+
+.activity-teacher-info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}

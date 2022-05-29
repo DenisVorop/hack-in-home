@@ -1,9 +1,15 @@
 .header {
     border-bottom: 1px solid #A9B3D4;
+    background: #FBFBFD;
 
     // .header__container
 
     &__container {}
+
+    &__left {
+        display: flex;
+        align-items: center;
+    }
 
     // .header__body
 
@@ -14,9 +20,39 @@
         padding: 16px 40px;
     }
 
+    &__search {
+        background: #FFFFFF;
+        border: 1px solid #D4D9E9;
+        box-shadow: 0px 0px 8px rgba(12, 27, 74, 0.08);
+        border-radius: 4px;
+        width: 500px;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 25%;
+            left: 10px;
+        }
+
+        input {
+            border-radius: 4px;
+            padding: 10px 10px 10px 36px;
+            width: 100%;
+        }
+
+        input::placeholder {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: #A9B3D4;
+        }
+    }
+
     // .header__logo
 
-    &__logo {}
+    &__logo {
+        margin: 0px 120px 0px 0px;
+    }
 
     // .header__main
 
@@ -68,5 +104,27 @@
         width: 28px;
         height: 28px;
         cursor: pointer;
+    }
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 42px;
+    left: 0px;
+    background: #FFFFFF;
+    border: 1px solid #D4D9E9;
+    box-shadow: 0px 0px 8px rgba(12, 27, 74, 0.08);
+    border-radius: 4px;
+    // max-height: 100px;
+    // overflow: auto;
+    width: 100%;
+}
+
+.dropdown-link {
+    cursor: pointer;
+    padding: 12px 0px 8px 12px;
+
+    &:hover {
+        background-color: #F4F5FA;
     }
 }

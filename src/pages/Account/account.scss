@@ -1,4 +1,5 @@
 .account {
+    flex: 1 1 auto;
 
     // .account__container
 
@@ -7,31 +8,31 @@
     // .account__body
 
     &__body {
-        display: flex;
-        height: inherit;
+        // display: flex;
+        // height: inherit;
+        // width: 100%;
+        padding: 32px;
     }
 
     // .account__general
 
-    &__general {
-        padding: 32px;
-    }
+    &__general {}
 
     // .account__rating
 
     &__rating {
-        padding: 32px;
-        background: rgba(244, 245, 250, 0.5);
     }
 
     // .account__secondary-bar
 
     &__secondary-bar {
-        padding: 32px;
+        width: fit-content;
     }
 }
 
 .general-account {
+    display: flex;
+    justify-content: space-between;
 
     // .general-account__main-info
 
@@ -56,9 +57,7 @@
 
     // .main-info-general-account__timetable
 
-    &__timetable {
-        margin: 0px 0px 40px 0px;
-    }
+    &__timetable {}
 
     // .main-info-general-account__button
 
@@ -107,6 +106,7 @@
 }
 
 .rating-account {
+    min-width: 400px;
 
     // .rating-account__body
 
@@ -162,7 +162,11 @@
 
     // .rating-account__cards
 
-    &__cards {}
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 24px;
+    }
 
     // .rating-account__card
 
@@ -175,6 +179,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        height: max-content;
 
         &:not(:last-child) {
             margin: 0px 0px 16px 0px;
@@ -229,7 +234,6 @@
     &__circle {
         width: 32px;
         height: 32px;
-        background: #D2053A;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -268,7 +272,6 @@
         box-shadow: 0px 2px 16px rgba(39, 64, 147, 0.08);
         border-radius: 4px;
         padding: 16px;
-        cursor: pointer;
         transition: all 0.3s ease 0s;
 
         &:hover {
@@ -303,6 +306,10 @@
         font-size: 16px;
         line-height: 20px;
         color: #080D1D;
+
+        &:not(:last-child) {
+            margin: 0px 0px 10px 0px;
+        }
     }
 
     // .secondary-bar-account__questions
@@ -315,33 +322,37 @@
         font-weight: 400;
         font-size: 16px;
         line-height: 20px;
-        color: #274093;
         cursor: pointer;
         position: relative;
         width: fit-content;
+        white-space: nowrap;
 
-        &::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 1.5px;
-            border-radius: 2px;
-            background-color: #274093;
-            bottom: 0;
-            left: 0;
-            transform-origin: right;
-            transform: scaleX(0);
-            transition: transform .4s ease-in-out;
+        &:hover {
+            text-decoration: underline;
         }
 
-        &:hover::before {
-            transform-origin: left;
-            transform: scaleX(1);
-        }
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     width: 100%;
+        //     height: 1.5px;
+        //     border-radius: 2px;
+        //     background-color: #274093;
+        //     bottom: 0;
+        //     left: 0;
+        //     transform-origin: right;
+        //     transform: scaleX(0);
+        //     transition: transform .4s ease-in-out;
+        // }
 
-        &:not(:last-child) {
-            margin: 0px 0px 16px 0px;
-        }
+        // &:hover::before {
+        //     transform-origin: left;
+        //     transform: scaleX(1);
+        // }
+
+        // &:not(:last-child) {
+        //     margin: 0px 0px 5px 0px;
+        // }
     }
 }
 
@@ -385,5 +396,159 @@
 }
 
 .headman {
-    color: red;
+    font-weight: 600;
+}
+
+.spr {
+    border-top: 2px solid #000000;
+    padding: 20px 0px 0px 0px;
+    margin: 0px 0px 15px 0px;
+}
+
+.mark-low {
+    background: #D2053A;
+}
+
+.mark-medium {
+    background: rgb(255, 140, 0);
+}
+
+.mark-top {
+    background: rgb(41, 138, 41);
+}
+
+.rating {
+
+    // .rating__body
+
+    &__body {}
+
+    // .rating__label
+
+    &__label {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+
+        &:first-child {
+            margin: 0px 0px 15px 0px;
+        }
+
+        &:last-child {
+            margin: 15px 0px 0px 0px;
+        }
+    }
+
+    // .rating__formule
+
+    &__formule {
+        margin: 0px 0px 10px 0px;
+    }
+
+    // .rating__p
+
+    &__p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #000000;
+        padding: 0px 0px 0px 30px;
+    }
+
+    // .rating__text
+
+    &__text {}
+
+    // .rating__p-p
+
+    &__p-p {
+        border-top: 1px solid #000;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #000000;
+        padding: 5px 0px 0px 0px;
+    }
+}
+
+.account {
+
+    // .account__header
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 0px 40px 0px;
+    }
+
+    // .account__bar
+
+    &__bar {}
+
+    // .account__links
+
+    &__links {
+        display: flex;
+        align-items: center;
+        background: #FFFFFF;
+        border: 1px solid #D4D9E9;
+        box-shadow: 0px 2px 16px rgba(39, 64, 147, 0.08);
+        border-radius: 14px;
+        padding: 4px;
+    }
+
+    // .account__link
+
+    &__link {
+        padding: 8px 16px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: #080D1D;
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin: 0px 8px 0px 0px;
+        }
+    }
+}
+
+.account-link-active {
+    background: #7D8CBE;
+    border-radius: 14px;
+    color: #FFFFFF;
+}
+
+.reference-answer {
+    padding: 10px 0px 0px 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0px 0px 15px 0px;
+
+    // .reference-answer__department
+
+    &__department {
+        margin: 0px 0px 8px 0px;
+    }
+
+    // .reference-answer__cabinet
+
+    &__cabinet {
+        margin: 0px 0px 8px 0px;
+    }
+
+    // .reference-answer__phone
+
+    &__phone {
+        margin: 0px 0px 8px 0px;
+    }
+}
+
+.mb8 {
+    &:not(:last-child) {
+        margin: 0px 0px 10px 0px;
+    }
 }

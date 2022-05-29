@@ -1,3 +1,5 @@
+import { departmentAPI } from './services/DepartmentService';
+import { teacherAPI } from './services/TeacherService';
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import authReducer from './reducers/authSlice'
 import teachersReducer from './reducers/teachersSlice'
@@ -7,6 +9,8 @@ const rootReducer = combineReducers({
     authReducer,
     teachersReducer,
     departmentsReducer,
+    [teacherAPI.reducerPath]: teacherAPI.reducer,
+    [departmentAPI.reducerPath]: departmentAPI.reducer,
 })
 
 export const setupStore = () => configureStore({ reducer: rootReducer })

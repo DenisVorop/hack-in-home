@@ -1,11 +1,11 @@
 import { AppDispatch } from './../store';
-import { TUser, TDepartment, TTeacher } from './../../types/types';
+import { TUser, TDepartment, TTeacher, TTeacherKoval } from './../../types/types';
 
 import { authSlice } from './authSlice';
 import { teachersSlice } from './teachersSlice';
 import { departmentsSlice } from './departmentsSlice';
 
-import { teachersApi } from '../../api/teachersApi';
+import { teacherApiKoval, teachersApi } from '../../api/teachersApi';
 import { loginApi } from '../../api/loginApi';
 import { departmentApi } from '../../api/departmentsApi';
 
@@ -59,6 +59,15 @@ export const fetchTeachersOfDepartmentData = (department: string) => async (disp
 
 export const deleteTeachers = () => (dispatch: AppDispatch) => {
     dispatch(teachersSlice.actions.zeroingTeachers())
+}
+
+export const fetchTeachersKovalData = (name: string) => async (dispatch: AppDispatch) => {
+    try {
+        const response = await teacherApiKoval(name)
+        dispatch(teachersSlice.actions.fetchTeachersKoval(response as TTeacherKoval[]))
+    } catch (e: any) {
+        return dispatch(teachersSlice.actions.fetchTeachersError(e.message))
+    }
 }
 
 // *** DEPARTMENTS ***

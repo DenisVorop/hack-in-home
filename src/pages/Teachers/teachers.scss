@@ -7,7 +7,7 @@
     // .teachers__body
 
     &__body {
-        height: calc(100vh - 87px);
+        height: calc(100vh - 190px);
         overflow: auto;
     }
 
@@ -20,4 +20,25 @@
         padding: 32px;
     }
 
+    // .teachers__inputs
+
+    &__inputs {
+        padding: 32px;
+        display: flex;
+    }
+
+    // .teachers__input-name
+
+    &__input-name {
+        margin: 0px 20px 0px 0px;
+    }
+
+    // .teachers__input-department
+
+    &__input-department {}
+
+}
+
+.teacher-search {
+    width: 300px;
 }

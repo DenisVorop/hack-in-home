@@ -4,6 +4,11 @@ export type TMessage = {
     file?: string
 }
 
+export type TGroup = {
+    name: string
+    headmen?: boolean
+}
+
 export type TUser = {
     email: string
     group: string
@@ -11,6 +16,8 @@ export type TUser = {
     name: string
     direction: string
     number_book: string
+    master: boolean,
+    group_list: TGroup[]
 }
 
 export type TTeacher = {
@@ -21,11 +28,28 @@ export type TTeacher = {
     subjects: string
     department: string
     Img: string
+    id?: number
 }
 
 export type TDepartment = {
     department: string
     institute: string
-    id: number
+    id?: number
     info: string
+}
+
+export type TAllQuestions = {
+    question: string
+}
+
+export type TTeacherKoval = {
+    id: number,
+    fullName: string
+}
+
+export type TReferences = {
+    question: string
+    department?: string
+    cabinet: string
+    phone: string
 }
