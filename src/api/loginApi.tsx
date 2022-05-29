@@ -5,7 +5,8 @@ import { TLoginData } from '../types/response.types'
 
 
 // export const REACT_APP_API_URL = ''
-export const REACT_APP_API_URL = 'https://hack-in-home.herokuapp.com'
+// export const REACT_APP_API_URL = 'https://hack-in-home.herokuapp.com'
+export const REACT_APP_API_URL = 'http://localhost:8000'
 
 
 const $local = axios.create({

@@ -2,8 +2,8 @@ import axios from 'axios'
 
 import { TTeachersDataResponse } from '../types/response.types'
 
-// const REACT_APP_API_URL = 'http://localhost:8000'
-const REACT_APP_API_URL = 'https://hack-in-home.herokuapp.com'
+const REACT_APP_API_URL = 'http://localhost:8000'
+// const REACT_APP_API_URL = 'https://hack-in-home.herokuapp.com'
 const REACT_APP_KOVAL = 'https://rinh-api.kovalev.team/employee/surname'
 
 

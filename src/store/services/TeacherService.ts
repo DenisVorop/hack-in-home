@@ -1,8 +1,8 @@
 import { TTeacher } from '../../types/types';
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react"
 
-// const baseUrl = 'http://localhost:8000'
-const baseUrl = 'https://hack-in-home.herokuapp.com'
+const baseUrl = 'http://localhost:8000'
+// const baseUrl = 'https://hack-in-home.herokuapp.com'
 
 export const teacherAPI = createApi({
     reducerPath: 'teacherApi',
