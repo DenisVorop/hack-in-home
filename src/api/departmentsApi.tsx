@@ -2,9 +2,10 @@
 import axios from 'axios'
 
 import { TDepartmentsDataResponse } from '../types/response.types'
+import { REACT_APP_API_URL } from './loginApi'
 
 
-const REACT_APP_API_URL = ''
+// const REACT_APP_API_URL = ''
 
 
 const $local = axios.create({

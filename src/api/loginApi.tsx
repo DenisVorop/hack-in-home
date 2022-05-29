@@ -4,7 +4,7 @@ import axios from 'axios'
 import { TLoginData } from '../types/response.types'
 
 
-const REACT_APP_API_URL = ''
+export const REACT_APP_API_URL = ''
 
 
 const $local = axios.create({

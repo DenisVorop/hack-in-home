@@ -1,8 +1,9 @@
 import axios from 'axios'
 
 import { TTeachersDataResponse } from '../types/response.types'
+import { REACT_APP_API_URL } from './loginApi'
 
-const REACT_APP_API_URL = ''
+// const REACT_APP_API_URL = ''
 const REACT_APP_KOVAL = 'https://rinh-api.kovalev.team/employee/surname'
 
 
